@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public class DataList {
 
@@ -79,21 +82,36 @@ public class DataList {
         return "data:[" + sb.toString() + "]";
     }
 
-    public void toCsvByYear(Year y){
+//    List rankings = new ArrayList<>();
+//movies.forEach(withCounter((i, movie) -> {
+//        String ranking = (i + 1) + ": " + movie;
+//        rankings.add(ranking);
+//    }));
+public static <T> Consumer<T> withCounter(BiConsumer<Integer, T> consumer) {
+    AtomicInteger counter = new AtomicInteger(0);
+    return item -> consumer.accept(counter.getAndIncrement(), item);
+}
+    public String toCsvByYear(Year y){
         File file = new File(dataTxt.getFileName()+"."+y.name()+".csv");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            data.get(y.ordinal()).stream().forEach(v-> {
+            data.get(y.ordinal()).stream().forEach(withCounter((i,v)-> {
                 try {
-                    writer.write(String.valueOf(v)+"\n");
+                    writer.write(i+"\t"+String.valueOf(v)+"\n");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-            });
+            }));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return file.getAbsolutePath();
     }
     public void toCsvByAllYear(){
+        dataTxt.getYears().forEach(y->toCsvByYear(y));
+    }
+
+    public void toPngByAllYear(){
         dataTxt.getYears().forEach(y->toCsvByYear(y));
     }
 

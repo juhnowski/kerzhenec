@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class DataListController {
 
-    private Steps step = Steps.AGREGATE;
+    private Steps step = Steps.FOR_ALL_YEARS;//Steps.AGREGATE; PNG_FOR_ALL_YEARS;//
 
     public void update(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->{o.parse();o.save();});
@@ -17,6 +17,10 @@ public class DataListController {
     }
 
     public void toCsvByAllYears(){
+        Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvByAllYear());
+    }
+
+    public void toPngByAllYears(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvByAllYear());
     }
 
@@ -58,10 +62,15 @@ public class DataListController {
                 init();
                 toCsvAllTimeline();
                 break;
+            case PNG_FOR_ALL_YEARS:
+                init();
+                toPngByAllYears();
             default:
                 break;
         }
     }
+
+    //Rscript data_by_year.r Kalach.txt.Y2003.csv __Kalach_txt_Y2003.png
     public static void main(String[] args) {
         DataListController dc = new DataListController();
         dc.process();
