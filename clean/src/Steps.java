@@ -1,0 +1,1 @@
+public enum Steps {FIRST_RUN_OR_UPDATE, FOR_ALL_YEARS, AGREGATE}

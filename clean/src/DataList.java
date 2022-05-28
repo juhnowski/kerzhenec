@@ -1,7 +1,7 @@
 import java.io.*;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DataList {
 
@@ -20,28 +20,18 @@ public class DataList {
         System.out.println("\t"+this);
     }
 
-    public static void main(String[] args) {
-        DataList boloto = new DataList(new DataTxt("C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\Boloto.txt",
-                Year.Y2002, Year.Y2003));
-
-        boloto.parse();
-        boloto.save();
-
-        boloto.clean();
-        boloto.read();
-    }
-
     public void clean(){
         data.forEach(t->t=null);
         initDataList();
     }
     public void parse(){
         try (FileReader fr = new FileReader(dataTxt.getFileName());
-             BufferedReader br = new BufferedReader(fr)) {
-
+            BufferedReader br = new BufferedReader(fr)) {
+            int cnt = -1;
             for (String s = br.readLine(); s != null; s = br.readLine()) {
                 String[] dt = s.split("\t");
                 dataTxt.stream().toList().forEach(y->store(y,dataTxt.getOffset(),dt));
+                cnt++;
             }
         } catch (IOException ioe){
             ioe.printStackTrace();
@@ -56,7 +46,7 @@ public class DataList {
         }
     }
 
-    private void save()  {
+    public void save()  {
         try(FileOutputStream fos = new FileOutputStream(dataTxt.getFileName()+".bin");
             ObjectOutputStream oos = new ObjectOutputStream(fos);){
             oos.writeObject(data);
@@ -69,7 +59,7 @@ public class DataList {
         }
     }
 
-    private void read() {
+    public void read() {
         try(FileInputStream fis = new FileInputStream(dataTxt.getFileName()+".bin");
             ObjectInputStream ois = new ObjectInputStream(fis);) {
             data = (ArrayList) ois.readObject();
@@ -88,4 +78,36 @@ public class DataList {
         Arrays.stream(Year.values()).forEach(y -> sb.append("("+y.ordinal() + ":" + data.get(y.ordinal()).stream().filter(i -> i >= 0).count()+")"));
         return "data:[" + sb.toString() + "]";
     }
+
+    public void toCsvByYear(Year y){
+        File file = new File(dataTxt.getFileName()+"."+y.name()+".csv");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            data.get(y.ordinal()).stream().forEach(v-> {
+                try {
+                    writer.write(String.valueOf(v)+"\n");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void toCsvByAllYear(){
+        dataTxt.getYears().forEach(y->toCsvByYear(y));
+    }
+
+    public String getValueByDayAndYear(int day, int year){
+
+        if (year<dataTxt.getOffset() || year >dataTxt.getLast())  {
+            return "0.0";
+        } else {
+            try {
+                return data.get(year - dataTxt.getOffset()).get(day).toString();
+            } catch (IndexOutOfBoundsException iob){
+                return "0.0";
+            }
+        }
+    }
+
 }
