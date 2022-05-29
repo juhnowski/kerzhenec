@@ -1,4 +1,4 @@
-# Электропроводность
+# Значения Электропроводности по годам и водоемам 
 При отсутствии данных добавлялись нулевые значени, поэтому при интерполяции графиков они на отсутствующих интервалах уходят в ноль.
 
 ## Река Керженец
@@ -123,6 +123,51 @@
 ## Сводные данные по всем водоемам за все время наблюдения
 ![all.png](https://github.com/juhnowski/kerzhenec/raw/main/all.png)
 ![all_smooth.png](https://github.com/juhnowski/kerzhenec/raw/main/all_smooth.png)
+
+# Статистика по водоемам
+## Река Керженец
+### Среднее значение и медиана на реке Керженец по дням
+![Ker_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_stat.png)
+### Отклонения от среднего значение на реке Керженец по дням
+![Ker_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_delta.png)
+
+## Река Вишня
+### Среднее значение и медиана на реке Вишня по дням
+![Vi_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_stat.png)
+### Отклонения от среднего значение на реке Вишня по дням
+![Vi_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_delta.png)
+
+## Озеро Круглое
+### Среднее значение и медиана на озере Круглом по дням
+![Vi_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_stat.png)
+### Отклонения от среднего значение на озере Круглом по дням
+![Vi_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_delta.png)
+
+## Озеро Калачик
+### Среднее значение и медиана на озере Калачик по дням
+![Kalach_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kalach_stat.png)
+### Отклонения от среднего значение на озере Калачик по дням
+![Kalach_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kalach_delta.png)
+
+## Озеро Нижнее Рустайское
+### Среднее значение и медиана на озере  Нижнее Рустайское по дням
+![Nrust_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Nrust_stat.png)
+### Отклонения от среднего значение на озере Нижнее Рустайское по дням
+![Nrust_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Nrust_delta.png)
+
+## Колодец
+### Среднее значение и медиана в колодце по дням
+![Kolodec_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_stat.png)
+### Отклонения от среднего значение в колодце по дням
+![Kolodec_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_delta.png)
+
+## Болото
+### Среднее значение и медиана на болоте по дням
+![Kolodec_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_stat.png)
+### Отклонения от среднего значение на болоте по дням
+![Kolodec_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_delta.png)
+
+# Средние отклонения по годам
 
 ## Welcome to GitHub Pages
 
