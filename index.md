@@ -26,17 +26,17 @@
 
 ## Река Вишня
 ### Река Вишня 1998 год
-![Vi_Y1998.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y1998.png)
+![Vi_Y1998.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y1998.png)
 ### Река Вишня 1999 год
-![Vi_Y1999.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y1999.png)
+![Vi_Y1999.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y1999.png)
 ### Река Вишня 2000 год
-![Vi_Y2000.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2000.png)
+![Vi_Y2000.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y2000.png)
 ### Река Вишня 2001 год
-![Vi_Y2001.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2001.png)
+![Vi_Y2001.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y2001.png)
 ### Река Вишня 2002 год
-![Vi_Y2002.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2002.png)
+![Vi_Y2002.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y2002.png)
 ### Река Вишня 2003 год
-![Vi_Y2003.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2003.png)
+![Vi_Y2003.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_Y2003.png)
 ### Сводные данные по реке Вишня 1998-2003 год
 ![Vi_point.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_point.png)
 ![Vi_smooth.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_smooth.png)
