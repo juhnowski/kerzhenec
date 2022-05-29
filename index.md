@@ -148,26 +148,29 @@
 ![Kalach_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kalach_stat.png)
 ### Отклонения от среднего значение на озере Калачик по дням
 ![Kalach_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kalach_delta.png)
+[Статистика по отклонениям](https://github.com/juhnowski/kerzhenec/raw/main/Kalach_varsum.csv)
 
 ## Озеро Нижнее Рустайское
 ### Среднее значение и медиана на озере  Нижнее Рустайское по дням
 ![Nrust_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Nrust_stat.png)
 ### Отклонения от среднего значение на озере Нижнее Рустайское по дням
 ![Nrust_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Nrust_delta.png)
+[Статистика по отклонениям](https://github.com/juhnowski/kerzhenec/raw/main/Nrust_varsum.csv)
 
 ## Колодец
 ### Среднее значение и медиана в колодце по дням
 ![Kolodec_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_stat.png)
 ### Отклонения от среднего значение в колодце по дням
 ![Kolodec_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_delta.png)
+[Статистика по отклонениям](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_varsum.csv)
 
 ## Болото
 ### Среднее значение и медиана на болоте по дням
-![Kolodec_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_stat.png)
+![Boloto_stat.png](https://github.com/juhnowski/kerzhenec/raw/main/Boloto_stat.png)
 ### Отклонения от среднего значение на болоте по дням
-![Kolodec_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Kolodec_delta.png)
+![Boloto_delta.png](https://github.com/juhnowski/kerzhenec/raw/main/Boloto_delta.png)
+[Статистика по отклонениям](https://github.com/juhnowski/kerzhenec/raw/main/Boloto_varsum.csv)
 
-# Средние отклонения по годам
 
 ## Welcome to GitHub Pages
 
