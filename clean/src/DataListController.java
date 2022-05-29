@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class DataListController {
 
-    private Steps step = Steps.PNG_AGREGATE;//Steps.AGREGATE; FOR_ALL_YEARS;//
+    private Steps step = Steps.PNG_NORMA;//Steps.AGREGATE; FOR_ALL_YEARS;//
 
     public void update(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->{o.parse();o.save();});
@@ -60,6 +60,14 @@ public class DataListController {
         ProcessR pr = new ProcessR();
         pr.startPngAgregate();
     }
+    public void toCsvNorma() {
+        Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvNorma());
+    }
+
+    public void toPngNorma() {
+        ProcessR pr = new ProcessR();
+        pr.startPngNorm();
+    }
 
     private void process(){
         switch (step) {
@@ -77,12 +85,23 @@ public class DataListController {
             case PNG_FOR_ALL_YEARS:
                 init();
                 toPngByAllYears();
+                break;
             case PNG_ALL_TIMELINE:
                 init();
                 toPngAllTimeline();
+                break;
             case PNG_AGREGATE:
                 init();
                 toPngAgregate();
+                break;
+            case NORMA:
+                init();
+                toCsvNorma();
+                break;
+            case PNG_NORMA:
+                init();
+                toPngNorma();
+                break;
             default:
                 break;
         }

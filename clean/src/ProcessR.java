@@ -47,4 +47,10 @@ public class ProcessR {
                 "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\data_by_all_year.r"};
         startR(commands);
     }
+
+    public void startPngNorm(){
+        String[] commands = {"C:\\Program Files\\R\\R-4.2.0\\bin\\Rscript.exe",
+                "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\data_stat.r"};
+        startR(commands);
+    }
 }

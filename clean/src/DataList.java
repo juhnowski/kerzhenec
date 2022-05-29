@@ -124,10 +124,52 @@ public static <T> Consumer<T> withCounter(BiConsumer<Integer, T> consumer) {
             return "0.0";
         } else {
             try {
-                return data.get(year - dataTxt.getOffset()).get(day).toString();
+                return data.get(year).get(day).toString();
             } catch (IndexOutOfBoundsException iob){
                 return "0.0";
             }
+        }
+    }
+
+    public void toCsvNorma(){
+        File file_mean = new File(dataTxt.getFileName()+".mean.csv");
+        File file_median = new File(dataTxt.getFileName()+".median.csv");
+        File file_delta = new File(dataTxt.getFileName()+".delta.csv");
+
+        try (BufferedWriter writer_mean = new BufferedWriter(new FileWriter(file_mean));
+             BufferedWriter writer_median = new BufferedWriter(new FileWriter(file_median));
+             BufferedWriter writer_delta = new BufferedWriter(new FileWriter(file_delta))) {
+            for (int i=0; i<364; i++) {
+                ArrayList<Double> mm = new ArrayList<Double>();
+                ArrayList<Double> ma = new ArrayList<Double>();
+                try {
+                    int from = dataTxt.getOffset();
+                    int to = dataTxt.getLast();
+                    for (int y=dataTxt.getOffset(); y<= dataTxt.getLast(); y++){
+                    String sval =  getValueByDayAndYear(i, y);
+                        if (!(sval.equals("0.0")||sval.equals("0")||sval.isEmpty())) {
+                            mm.add(Double.parseDouble(sval));
+                            ma.add(Double.parseDouble(sval));
+                        } else {
+                            ma.add(0.0);
+                        }
+                    }
+                    double mean = Utils.mean(mm);
+                    writer_mean.write(i + "\t" + mean + "\n");
+                    writer_median.write(i + "\t" + Utils.median(mm) + "\n");
+
+                    writer_delta.write(String.valueOf(i));
+                    for (int j=0; j< ma.size(); j++) {
+                        writer_delta.write("\t" + String.valueOf(ma.get(j)==0?0.0:ma.get(j)- mean));
+                    }
+                    writer_delta.write("\n");
+
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
