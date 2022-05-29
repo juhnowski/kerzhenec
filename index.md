@@ -37,7 +37,7 @@
 ![Vi_Y2002.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2002.png)
 ### Река Вишня 2003 год
 ![Vi_Y2003.png](https://github.com/juhnowski/kerzhenec/raw/main/Ker_Y2003.png)
-### Сводные данные по реке Керженец 1998-2003 год
+### Сводные данные по реке Вишня 1998-2003 год
 ![Vi_point.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_point.png)
 ![Vi_smooth.png](https://github.com/juhnowski/kerzhenec/raw/main/Vi_smooth.png)
 
