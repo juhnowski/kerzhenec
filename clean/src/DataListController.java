@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class DataListController {
 
-    private Steps step = Steps.PNG_FOR_ALL_YEARS;//Steps.AGREGATE; FOR_ALL_YEARS;//
+    private Steps step = Steps.PNG_ALL_TIMELINE;//Steps.AGREGATE; FOR_ALL_YEARS;//
 
     public void update(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->{o.parse();o.save();});
@@ -24,10 +24,13 @@ public class DataListController {
     public void toCsvAllTimeline(){
         File file = new File(Resources.FN_ALL);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            int idx = 0;
             for (int y=0; y<Resources.Y_KER.length;y++){
                 for (int d = 0; d< Utils.getDaysOfYear(y); d++){
                     int finalD = d;
                     int finalY = y;
+                    writer.write(Integer.toString(idx++));
+                    writer.write("\t");
                     Arrays.stream(DataObjects.all).forEach(o-> {
                         try {
                             writer.write(o.getValueByDayAndYear(finalD, finalY));
@@ -46,6 +49,12 @@ public class DataListController {
         }
     }
 
+    public void toPngAllTimeline(){
+        toCsvAllTimeline();
+        ProcessR pr = new ProcessR();
+        pr.startAllTimeline(Resources.FN_SHORT_ALL);
+    }
+
     private void process(){
         switch (step) {
             case FIRST_RUN_OR_UPDATE:
@@ -62,6 +71,9 @@ public class DataListController {
             case PNG_FOR_ALL_YEARS:
                 init();
                 toPngByAllYears();
+            case PNG_ALL_TIMELINE:
+                init();
+                toPngAllTimeline();
             default:
                 break;
         }

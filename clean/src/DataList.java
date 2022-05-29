@@ -112,7 +112,10 @@ public static <T> Consumer<T> withCounter(BiConsumer<Integer, T> consumer) {
     }
 
     public void toPngByAllYear(){
-        dataTxt.getYears().forEach(y->ProcessR.startPngToYear(toCsvByYear(y)));
+        dataTxt.getYears().forEach(y->{
+            ProcessR pr = new ProcessR();
+            pr.startPngToYear(toCsvByYear(y));
+        });
     }
 
     public String getValueByDayAndYear(int day, int year){
