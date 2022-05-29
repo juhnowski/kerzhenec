@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class DataListController {
 
-    private Steps step = Steps.PNG_ALL_TIMELINE;//Steps.AGREGATE; FOR_ALL_YEARS;//
+    private Steps step = Steps.PNG_AGREGATE;//Steps.AGREGATE; FOR_ALL_YEARS;//
 
     public void update(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->{o.parse();o.save();});
@@ -55,6 +55,12 @@ public class DataListController {
         pr.startAllTimeline(Resources.FN_SHORT_ALL);
     }
 
+    public void toPngAgregate(){
+        toCsvAllTimeline();
+        ProcessR pr = new ProcessR();
+        pr.startPngAgregate();
+    }
+
     private void process(){
         switch (step) {
             case FIRST_RUN_OR_UPDATE:
@@ -74,6 +80,9 @@ public class DataListController {
             case PNG_ALL_TIMELINE:
                 init();
                 toPngAllTimeline();
+            case PNG_AGREGATE:
+                init();
+                toPngAgregate();
             default:
                 break;
         }

@@ -42,4 +42,9 @@ public class ProcessR {
         startR(commands);
     }
 
+    public void startPngAgregate(){
+        String[] commands = {"C:\\Program Files\\R\\R-4.2.0\\bin\\Rscript.exe",
+                "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\data_by_all_year.r"};
+        startR(commands);
+    }
 }
