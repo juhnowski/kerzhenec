@@ -108,11 +108,11 @@ public static <T> Consumer<T> withCounter(BiConsumer<Integer, T> consumer) {
         return file.getAbsolutePath();
     }
     public void toCsvByAllYear(){
-        dataTxt.getYears().forEach(y->toCsvByYear(y));
+        dataTxt.getYears().forEach(y->System.out.println("Export to CSV:" + toCsvByYear(y)+" done"));
     }
 
     public void toPngByAllYear(){
-        dataTxt.getYears().forEach(y->toCsvByYear(y));
+        dataTxt.getYears().forEach(y->ProcessR.startPngToYear(toCsvByYear(y)));
     }
 
     public String getValueByDayAndYear(int day, int year){

@@ -7,8 +7,8 @@ public class Resources {
     public static final String FN_NRUST = "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\Nrust.txt";
     public static final String FN_KOLODEC = "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\Kolodec.txt";
     public static final String FN_BOLOTO = "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\Boloto.txt";
-
     public static final String FN_ALL = "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность\\all.csv";
+    public static final String FN_WORK_DIR = "C:\\Users\\IlyaYukhnovskiy\\Documents\\электропроводность";
     public static final Year Y_KER[] =new Year[] {Year.Y1996,Year.Y1997,Year.Y1998,Year.Y1999,Year.Y2000,Year.Y2001,Year.Y2002,Year.Y2003,Year.Y2004};
     public static final Year Y_VI[] =new Year[] {Year.Y1998,Year.Y1999,Year.Y2000,Year.Y2001,Year.Y2002,Year.Y2003};
     public static final Year Y_BOLOTO[] =new Year[] { Year.Y2002, Year.Y2003};

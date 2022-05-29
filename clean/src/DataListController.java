@@ -1,12 +1,9 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 
 public class DataListController {
 
-    private Steps step = Steps.FOR_ALL_YEARS;//Steps.AGREGATE; PNG_FOR_ALL_YEARS;//
+    private Steps step = Steps.PNG_FOR_ALL_YEARS;//Steps.AGREGATE; FOR_ALL_YEARS;//
 
     public void update(){
         Arrays.stream(DataObjects.all).parallel().forEach(o->{o.parse();o.save();});
@@ -17,11 +14,11 @@ public class DataListController {
     }
 
     public void toCsvByAllYears(){
-        Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvByAllYear());
+       Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvByAllYear());
     }
 
     public void toPngByAllYears(){
-        Arrays.stream(DataObjects.all).parallel().forEach(o->o.toCsvByAllYear());
+        Arrays.stream(DataObjects.all).parallel().forEach(o->o.toPngByAllYear());
     }
 
     public void toCsvAllTimeline(){
